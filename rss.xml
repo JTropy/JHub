@@ -4,7 +4,7 @@
         <title>矛隼苑</title>
         <link>https://knotens.org</link>
         <description>我们存在</description>
-        <lastBuildDate>Sat, 21 Mar 2026 12:51:56 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2026 14:58:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>海東青</generator>
         <language>zh</language>
@@ -14,7 +14,7 @@
             <link>https://knotens.org/posts/常见逻辑谬误</link>
             <guid>https://knotens.org/posts/常见逻辑谬误</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[这里收集了简中互联网上常见的逻辑谬误]]></description>
+            <description><![CDATA[简中互联网上常见的逻辑谬误]]></description>
             <author>X@knotens.org (海東青)</author>
         </item>
         <item>
@@ -22,15 +22,15 @@
             <link>https://knotens.org/posts/简中互联网七诫</link>
             <guid>https://knotens.org/posts/简中互联网七诫</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[这是本人的简介]]></description>
+            <description><![CDATA[简中互联网七诫]]></description>
             <author>X@knotens.org (海東青)</author>
         </item>
         <item>
-            <title><![CDATA[本人简介]]></title>
+            <title><![CDATA[个人简介]]></title>
             <link>https://knotens.org/posts/自我介绍</link>
             <guid>https://knotens.org/posts/自我介绍</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[这是本人的简介]]></description>
+            <description><![CDATA[你好！]]></description>
             <author>X@knotens.org (海東青)</author>
         </item>
     </channel>
