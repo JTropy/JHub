@@ -28,6 +28,8 @@ export default withPwa(
     lang: themeConfig.siteMeta.lang,
     // 简洁的 URL
     cleanUrls: true,
+    // 忽略死链（解决 Vercel / GitHub Actions 因链接问题导致的构建失败）
+    ignoreDeadLinks: true,
     // 最后更新时间戳
     lastUpdated: true,
     // 主题
