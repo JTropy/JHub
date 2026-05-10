@@ -4,11 +4,19 @@
         <title>矛隼苑</title>
         <link>https://knotens.org</link>
         <description>我们存在</description>
-        <lastBuildDate>Thu, 26 Mar 2026 15:00:44 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 May 2026 08:03:10 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>海東青</generator>
         <language>zh</language>
         <copyright>Copyright © 2020-present 海東青</copyright>
+        <item>
+            <title><![CDATA[完整 Frontmatter 示例文章]]></title>
+            <link>https://knotens.org/posts/示例-元数据解析</link>
+            <guid>https://knotens.org/posts/示例-元数据解析</guid>
+            <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[这是一段描述。它将作为文章的简短摘要显示在文章列表卡片中，并用于 SEO。]]></description>
+            <author>X@knotens.org (海東青)</author>
+        </item>
         <item>
             <title><![CDATA[常见逻辑谬误]]></title>
             <link>https://knotens.org/posts/常见逻辑谬误</link>
