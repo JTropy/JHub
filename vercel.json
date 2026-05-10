@@ -6,6 +6,5 @@
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/feed.xml", "destination": "/feed.xml" },
     { "source": "/:path*", "destination": "/index.html" }
-  ],
-  "installCommand": "pnpm install --no-frozen-lockfile"
+  ]
 }
