@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>我们将在水草丰美之地重逢</title>
+        <title>京华</title>
         <link>https://knotens.org</link>
         <description>你看的小说电影电视剧结束了吗？只要你还在想象，故事仍在继续。</description>
-        <lastBuildDate>Sun, 10 May 2026 11:59:16 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 May 2026 12:22:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-        <generator>京太</generator>
+        <generator>京华</generator>
         <language>zh</language>
-        <copyright>Copyright © 2020-present 京太</copyright>
+        <copyright>Copyright © 2020-present 京华</copyright>
         <item>
             <title><![CDATA[完整 Frontmatter 示例文章]]></title>
             <link>https://knotens.org/posts/示例-元数据解析</link>
             <guid>https://knotens.org/posts/示例-元数据解析</guid>
             <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[这是一段描述。它将作为文章的简短摘要显示在文章列表卡片中，并用于 SEO。]]></description>
-            <author>X@knotens.org (京太)</author>
+            <author>X@knotens.org (京华)</author>
         </item>
         <item>
             <title><![CDATA[常见逻辑谬误]]></title>
@@ -23,7 +23,7 @@
             <guid>https://knotens.org/posts/常见逻辑谬误</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[简中互联网上常见的逻辑谬误]]></description>
-            <author>X@knotens.org (京太)</author>
+            <author>X@knotens.org (京华)</author>
         </item>
         <item>
             <title><![CDATA[简中互联网七诫]]></title>
@@ -31,7 +31,7 @@
             <guid>https://knotens.org/posts/简中互联网七诫</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[简中互联网七诫]]></description>
-            <author>X@knotens.org (京太)</author>
+            <author>X@knotens.org (京华)</author>
         </item>
         <item>
             <title><![CDATA[个人简介]]></title>
@@ -39,7 +39,7 @@
             <guid>https://knotens.org/posts/自我介绍</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[你好！]]></description>
-            <author>X@knotens.org (京太)</author>
+            <author>X@knotens.org (京华)</author>
         </item>
     </channel>
 </rss>
