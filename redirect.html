@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>安全中心 | 無名小栈</title>
+    <title>安全中心 | 京华</title>
     <style>
       * {
         margin: 0;
@@ -153,12 +153,12 @@
         <img src="./images/logo/logo.webp" alt="" />
       </div>
       <div class="title">
-        <span class="site-name">無名小栈</span>
+        <span class="site-name">京华</span>
         <span class="site-tip">安全中心</span>
       </div>
     </header>
     <main>
-      <span class="tip">您即将离开無名小栈，前往</span>
+      <span class="tip">您即将离开京华，前往</span>
       <span id="url"></span>
       <div id="jump-content" class="warn">
         <span id="site-info">⚠️ 该网址安全性未知，请注意您的帐号和财产安全</span>
@@ -166,14 +166,14 @@
       </div>
     </main>
     <footer>
-      <a class="power" href="https://blog.imsyy.top/">
+      <a class="power" href="https://knotens.org/">
         ©
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        無名小栈
+        <span id="current-year"></span>
+        京华
       </a>
-      <a class="icp" href="https://beian.miit.gov.cn/" target="_blank"> 豫ICP备2022018134号-1 </a>
+      <a class="icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+        备案信息
+      </a>
     </footer>
     <script>
       // 跳转网址
@@ -184,9 +184,11 @@
       const urlTip = document.getElementById("site-info");
       const jumpContent = document.getElementById("jump-content");
       const jumpButton = document.getElementById("jump-button");
+      const currentYear = document.getElementById("current-year");
       // 网址白名单
       const whitelist = [
-        "*.imsyy.top",
+        "knotens.org",
+        "*.knotens.org",
         "gitee.com",
         "github.com",
         "*.baidu.com",
@@ -200,15 +202,27 @@
         safe: "✅ 该网址为信任网址，即将跳转",
         danger: "⛔ 该网址处于黑名单",
       };
+      const safeProtocols = ["http:", "https:"];
+      const escapeRegExp = (value) => value.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+      const wildcardToRegExp = (pattern) => {
+        const escaped = pattern.split("*").map(escapeRegExp).join(".*");
+        return new RegExp(`^${escaped}$`, "i");
+      };
+      const matchesPattern = (hostname, pattern) => wildcardToRegExp(pattern).test(hostname);
+      const decodeBase64Url = (value) => {
+        const binary = atob(value);
+        const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+        return new TextDecoder().decode(bytes);
+      };
       // 自动跳转
       const autoJump = () => {
         let count = 3;
         const updateContent = () => {
-          jumpButton.innerHTML = `${count} 秒后自动跳转`;
+          jumpButton.textContent = `${count} 秒后自动跳转`;
           count--;
           if (count < 0) {
             clearInterval(interval);
-            jumpButton.innerHTML = "正在跳转";
+            jumpButton.textContent = "正在跳转";
             window.location.replace(jumpLink);
           }
         };
@@ -222,18 +236,23 @@
           // 解析 URL 参数
           const urlParams = new URLSearchParams(window.location.search);
           const encodedUrl = urlParams.get("url");
+          if (!encodedUrl) throw new Error("缺少跳转链接");
           // 解密 Base64
-          jumpLink = atob(encodedUrl);
-          urlDom.innerHTML = jumpLink;
+          jumpLink = decodeBase64Url(encodedUrl);
+          const parsedUrl = new URL(jumpLink);
+          if (!safeProtocols.includes(parsedUrl.protocol)) {
+            throw new Error("不支持的跳转协议");
+          }
+          jumpLink = parsedUrl.href;
+          urlDom.textContent = jumpLink;
           // 获取网址的主机名
-          const urlHostname = new URL(jumpLink).hostname;
+          const urlHostname = parsedUrl.hostname;
           // 判断网址是否在黑名单中
           for (let i = 0; i < blacklist.length; i++) {
-            const blackPattern = blacklist[i].replace(/\*/g, ".*");
-            if (urlHostname.match(blackPattern)) {
+            if (matchesPattern(urlHostname, blacklist[i])) {
               // 显示提示信息
-              urlTip.innerHTML = tipText.danger;
-              jumpButton.innerHTML = "禁止跳转";
+              urlTip.textContent = tipText.danger;
+              jumpButton.textContent = "禁止跳转";
               jumpButton.style.cursor = "not-allowed";
               jumpButton.style.pointerEvents = "none";
               jumpButton.style.opacity = "0.4";
@@ -243,10 +262,9 @@
           }
           // 判断网址是否在白名单中
           for (let i = 0; i < whitelist.length; i++) {
-            const whitePattern = whitelist[i].replace(/\*/g, ".*");
-            if (urlHostname.match(whitePattern)) {
+            if (matchesPattern(urlHostname, whitelist[i])) {
               // 显示提示信息
-              urlTip.innerHTML = tipText.safe;
+              urlTip.textContent = tipText.safe;
               jumpContent.className = "safe";
               autoJump();
               return true;
@@ -255,7 +273,7 @@
         } catch (error) {
           console.error(error);
           jumpContent.remove();
-          urlDom.innerHTML = "获取跳转链接失败";
+          urlDom.textContent = "获取跳转链接失败";
         }
       };
       document.addEventListener("contextmenu", function (event) {
@@ -275,10 +293,11 @@
       });
       jumpButton.addEventListener("click", () => {
         clearInterval(interval);
-        jumpButton.innerHTML = "正在跳转";
+        jumpButton.textContent = "正在跳转";
         if (jumpLink) window.location.replace(jumpLink);
       });
       window.addEventListener("DOMContentLoaded", () => {
+        currentYear.textContent = new Date().getFullYear().toString();
         getJumpUrl();
       });
     </script>
