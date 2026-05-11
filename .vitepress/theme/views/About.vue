@@ -54,26 +54,41 @@
         />
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 3fr 2fr">
-      <!-- 性格 -->
-      <div class="about-item character" style="--color: #4298b4">
-        <span class="tip">性格</span>
-        <span class="title2">观察者</span>
-        <span class="title2" style="color: var(--color)">冷静，但不冷漠</span>
-        <span class="more">
-          对世界保持
-          <a href="https://www.16personalities.com/ch/" target="_blank">好奇</a>
-          ，对人性保持
-          <a href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC" target="_blank">
-            警惕
-          </a>
-        </span>
-        <img
-          src="http://img.knotens.org/i/2026/05/11/6a01591982c56.png"
-          alt="male"
-          class="male"
-        />
+    <!-- 测评分析 - 第一行 -->
+    <div class="about-content" style="grid-template-columns: 1.5fr 1fr">
+      <div class="about-item personality-card mbti" style="--color: #4298b4">
+        <span class="tip">MBTI 认知功能</span>
+        <span class="title2">INTP 建筑师</span>
+        <div class="result-img-wrapper">
+          <img src="/images/about/mbti.png" alt="MBTI" class="result-img" />
+        </div>
       </div>
+      <div class="about-item personality-card cn-values" style="--color: #e91e63">
+        <span class="tip">政治坐标</span>
+        <span class="title2">社会自由主义</span>
+        <div class="result-img-wrapper">
+          <img src="/images/about/cn_values.png" alt="CN Values" class="result-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 测评分析 - 第二行 -->
+    <div class="about-content" style="grid-template-columns: 1fr 1.5fr">
+      <div class="about-item personality-card enneagram" style="--color: #3f51b5">
+        <span class="tip">九型人格</span>
+        <span class="title2">5w6 观察者</span>
+        <div class="result-img-wrapper">
+          <img src="/images/about/enneagram.png" alt="Enneagram" class="result-img" />
+        </div>
+      </div>
+      <div class="about-item personality-card attachment" style="--color: #00bcd4">
+        <span class="tip">依恋类型</span>
+        <span class="title2">回避型 / 冷漠型</span>
+        <div class="result-img-wrapper">
+          <img src="/images/about/attachment.png" alt="Attachment" class="result-img" />
+        </div>
+      </div>
+    </div>
       <!-- 座右铭 -->
       <div class="about-item">
         <span class="tip">座右铭</span>
@@ -274,35 +289,66 @@ onMounted(() => {
           }
         }
       }
-      &.character {
-        min-height: 220px;
+      &.personality-card {
+        min-height: 280px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
-        .more {
-          margin-top: auto;
-          font-size: 14px;
-          color: var(--main-color-gray);
-          a {
-            color: var(--main-color-gray);
-            &:hover {
-              color: var(--color);
-            }
-          }
-        }
-        .male {
+        .result-img-wrapper {
           position: absolute;
-          top: 0;
-          right: -10px;
-          height: 100%;
-          width: auto;
-          transition: transform 0.5s;
-          transform-origin: top center;
-          @media (max-width: 768px) {
-            height: 80%;
+          right: -30px;
+          bottom: -20px;
+          width: 70%;
+          height: 180px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+          transform: rotate(-8deg) translateY(20px);
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          background-color: rgba(0, 0, 0, 0.2);
+          .result-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
           }
         }
         &:hover {
-          .male {
-            transform: scale(1.2);
+          background-color: var(--color);
+          transform: translateY(-5px);
+          .tip,
+          .title2 {
+            color: #fff;
+            opacity: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          }
+          .result-img-wrapper {
+            transform: rotate(0deg) translateY(-10px) scale(1.05);
+            right: 20px;
+            bottom: 20px;
+            width: 80%;
+            height: 200px;
+            z-index: 10;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+            .result-img {
+              transform: scale(1.1);
+            }
+          }
+        }
+        &.enneagram {
+          .result-img-wrapper {
+            width: 60%;
+            .result-img {
+              object-fit: contain;
+              background: #fff;
+            }
+          }
+        }
+        @media (max-width: 768px) {
+          min-height: 240px;
+          .result-img-wrapper {
+            width: 60%;
+            height: 140px;
+            right: -10px;
           }
         }
       }
