@@ -69,7 +69,7 @@
           </a>
         </span>
         <img
-          src="/images/about/personality.png"
+          src="http://img.knotens.org/i/2026/05/11/6a01591982c56.png"
           alt="male"
           class="male"
         />
