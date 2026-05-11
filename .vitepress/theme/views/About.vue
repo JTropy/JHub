@@ -374,11 +374,11 @@ onMounted(() => {
         .male {
           position: absolute;
           top: 0;
-          right: 0;
+          right: -10px;
           height: 100%;
           width: auto;
           transition: transform 0.5s;
-          transform-origin: center right;
+          transform-origin: top center;
           @media (max-width: 768px) {
             height: 80%;
           }
