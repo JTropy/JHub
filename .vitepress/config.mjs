@@ -35,22 +35,7 @@ export default withPwa(
     // 主题
     appearance: "dark",
     // Head
-    head: [
-      ...(themeConfig.inject?.header || []),
-      [
-        "script",
-        {
-          charset: "UTF-8",
-          id: "LA_COLLECT",
-          src: "//sdk.51.la/js-sdk-pro.min.js",
-        },
-      ],
-      [
-        "script",
-        {},
-        'LA.init({id:"3PtjAy1LWs031oEN",ck:"3PtjAy1LWs031oEN"})',
-      ],
-    ],
+    head: themeConfig.inject.header,
     // sitemap
     sitemap: {
       hostname: themeConfig.siteMeta.site,

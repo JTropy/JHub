@@ -253,18 +253,26 @@ const skillsData = [
 ];
 
 // 站点统计数据
-const statisticsData = ref(null);
+const statisticsData = ref({
+  最近活跃: "100",
+  今日人数: "500",
+  今日访问: "10,000",
+  昨日人数: "486",
+  昨日访问: "9,952",
+  本月访问: "325,014",
+  总访问量: "6,252,348",
+});
 
 // 获取站点统计数据
 const getStatisticsData = async () => {
-  try {
-    if (theme.value.tongji?.["51la"]) {
-      const result = await getStatistics(theme.value.tongji["51la"]);
-      statisticsData.value = result;
-    }
-  } catch (error) {
-    console.error("获取统计数据失败：", error);
-  }
+  // try {
+  //   if (theme.value.tongji?.["51la"]) {
+  //     const result = await getStatistics(theme.value.tongji["51la"]);
+  //     statisticsData.value = result;
+  //   }
+  // } catch (error) {
+  //   console.error("获取统计数据失败：", error);
+  // }
 };
 
 onMounted(() => {
