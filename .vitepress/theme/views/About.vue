@@ -114,22 +114,7 @@
       </div>
     </div>
 
-    <!-- 心路历程 -->
-    <div class="about-content" style="display: flex">
-      <div class="about-item">
-        <span class="tip">心路历程</span>
-        <span class="title2">为什么记录？</span>
-        <p class="text">
-          阅读是世界上杠杆最高的活动之一——投入一个工作天的时间，就能接触到最聪明的人已经研究透彻的东西。这个站点，就是我把<strong>阅读的杠杆</strong>落地的场所。
-        </p>
-        <p class="text">
-          这里不追求流量，不讨好算法。写技术，也写对世界的观察。符号和立场在吵架，但人类在相爱——我选择<strong>站在两者之间</strong>，记录、思考、拆解。
-        </p>
-        <p class="text">
-          做对的事情，再把事情做对。如果某篇文章恰好撞上了你的某段思考，那说明我们<strong>在各自的路上奔跑时遇见了</strong>。
-        </p>
-      </div>
-    </div>
+
   </div>
 </template>
 
@@ -393,8 +378,14 @@ onMounted(() => {
           bottom: -10px;
           left: 0;
           width: 100%;
+          transition: transform 0.5s ease;
           @media (max-width: 768px) {
             position: static;
+          }
+        }
+        &:hover {
+          .career-img {
+            transform: scale(1.05) translateY(-5px);
           }
         }
       }
