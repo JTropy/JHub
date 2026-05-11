@@ -16,7 +16,7 @@
         <span class="title2">在代码里安放灵魂</span>
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 2fr 3fr">
+    <div class="about-content" style="grid-template-columns: 1fr">
       <!-- 技能 -->
       <div class="about-item skills">
         <span class="tip">技能</span>
@@ -37,37 +37,21 @@
           </a>
         </div>
       </div>
-      <!-- 生涯 -->
-      <div class="about-item career">
-        <span class="tip">生涯</span>
-        <span class="title2">
-          <i>不断拆解，不断重建</i>
-        </span>
-        <div class="list">
-          <span class="list-item" style="--color: #357ef5">ZZRVTC · 计算机应用技术</span>
-          <span class="list-item" style="--color: #eb372a">FE · 前端开发工程师</span>
-        </div>
-        <img
-          class="career-img"
-          src="/images/about/career.png"
-          alt="career"
-        />
-      </div>
     </div>
     <!-- 测评分析 - 第一行 -->
     <div class="about-content" style="grid-template-columns: 1.5fr 1fr">
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
-        <span class="title2">INTP 建筑师</span>
+        <span class="title2">ISTJ 观察者</span>
         <div class="result-img-wrapper">
-          <img src="/images/about/mbti.png" alt="MBTI" class="result-img" />
+          <img src="http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png" alt="MBTI" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card cn-values" style="--color: #e91e63">
         <span class="tip">政治坐标</span>
         <span class="title2">社会自由主义</span>
         <div class="result-img-wrapper">
-          <img src="/images/about/cn_values.png" alt="CN Values" class="result-img" />
+          <img src="http://img.knotens.org/i/2026/05/11/6a01aef80487e.png" alt="CN Values" class="result-img" />
         </div>
       </div>
     </div>
@@ -78,14 +62,14 @@
         <span class="tip">九型人格</span>
         <span class="title2">5w6 观察者</span>
         <div class="result-img-wrapper">
-          <img src="/images/about/enneagram.png" alt="Enneagram" class="result-img" />
+          <img src="http://img.knotens.org/i/2026/05/11/6a01b0b582ca6.png" alt="Enneagram" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card attachment" style="--color: #00bcd4">
         <span class="tip">依恋类型</span>
         <span class="title2">回避型 / 冷漠型</span>
         <div class="result-img-wrapper">
-          <img src="/images/about/attachment.png" alt="Attachment" class="result-img" />
+          <img src="http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png" alt="Attachment" class="result-img" />
         </div>
       </div>
     </div>
@@ -456,8 +440,12 @@ onMounted(() => {
         background-repeat: no-repeat;
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
         &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 24px -8px var(--main-border-shadow);
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 20px 40px -10px var(--main-border-shadow);
+          &::after {
+            opacity: 0.8;
+            box-shadow: inset 0 -120px 200px 10px var(--color);
+          }
         }
         .image-content {
           flex-grow: 1;
@@ -496,6 +484,7 @@ onMounted(() => {
           background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
           box-shadow: inset 0 -70px 204px 10px var(--color);
           z-index: 0;
+          transition: all 0.5s ease;
         }
       }
 
