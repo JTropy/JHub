@@ -316,7 +316,7 @@ export const themeConfig = {
     // 站点简介
     hello: {
       enable: true,
-      text: "个人文章存档，内容不设限：技术是饭碗，人文是爱好，政治是忍不住。",
+      text: "个人文章存档，内容不设限：<br>技术是饭碗，<br>人文是爱好，<br>政治是忍不住。",
     },
     // 目录
     toc: {
