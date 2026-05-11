@@ -88,8 +88,8 @@
           <img src="/images/about/attachment.png" alt="Attachment" class="result-img" />
         </div>
       </div>
-    </div>
-      <!-- 座右铭 -->
+    <!-- 座右铭 -->
+    <div class="about-content" style="grid-template-columns: 1fr">
       <div class="about-item">
         <span class="tip">座右铭</span>
         <span class="title1" style="margin-top: 20px">怕什么真理无穷，</span>
@@ -135,6 +135,7 @@
 
 <script setup>
 import { useData } from "vitepress";
+import { onMounted } from "vue";
 
 const { theme } = useData();
 
