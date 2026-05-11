@@ -7,7 +7,11 @@
       <div class="about-item hello">
         <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
-        <span class="text3">关注技术与人文的交叉领域</span>
+        <span class="text3">
+          追求极致的极简主义者，在代码与文字间寻找平衡。<br/>
+          热爱开源、摄影与深度思考，试图通过技术构建一个更有趣的世界。<br/>
+          关注技术与人文的交叉领域。
+        </span>
       </div>
       <!-- 技能 -->
       <div class="about-item skills">
@@ -41,10 +45,10 @@
         "
       >
         <div class="image-content">
-          <span class="tip">关注偏好</span>
-          <span class="title2">人性与权力</span>
+          <span class="tip">座右铭</span>
+          <span class="title2">怕什么真理无穷，<br/>进一寸有一寸的欢喜</span>
           <div class="image-desc">
-            <span class="left">政治、历史、社会与技术的交叉地带</span>
+            <span class="left">—— 胡适</span>
           </div>
         </div>
       </div>
@@ -57,16 +61,16 @@
       >
         <div class="image-content">
           <span class="tip">音乐偏好</span>
-          <span class="title2">欧美、华语流行、纯音乐、ACG</span>
+          <span class="title2">说唱、古风DJ、Funk</span>
           <div class="image-desc">
-            <span class="left">旋律是思想的另一种语言</span>
+            <span class="left">旋律是灵魂的避风港</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- 测评分析 - 第一行 -->
-    <div class="about-content" style="grid-template-columns: 1fr 1.5fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1.2fr">
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
         <span class="title2">INTJ 建筑师</span>
@@ -84,12 +88,12 @@
     </div>
 
     <!-- 测评分析 - 第二行 -->
-    <div class="about-content" style="grid-template-columns: 1fr 1.5fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1.2fr">
       <div class="about-item personality-card enneagram" style="--color: #3f51b5">
         <span class="tip">九型人格</span>
         <span class="title2">5w6 观察者</span>
-        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01b0b582ca6.png'">
-          <img src="http://img.knotens.org/i/2026/05/11/6a01b0b582ca6.png" alt="Enneagram" class="result-img" />
+        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01c00bc0f3a.png'">
+          <img src="http://img.knotens.org/i/2026/05/11/6a01c00bc0f3a.png" alt="Enneagram" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card attachment" style="--color: #00bcd4">
@@ -238,13 +242,29 @@ onMounted(() => {
 
       &.hello {
         justify-content: center;
-        padding: 2rem;
+        padding: 2rem 2.5rem;
         color: #fff;
         background-image: linear-gradient(120deg, #5b27ff 0%, #00d4ff 100%);
         background-size: 200% 200%;
         animation: gradientFlow 6s ease infinite;
-        .title2 {
-          line-height: 2;
+        
+        .text1 {
+          font-size: 1rem;
+          opacity: 0.8;
+          margin-bottom: 0.5rem;
+        }
+
+        .text2 {
+          font-size: 2.5rem;
+          margin-bottom: 1.2rem;
+          line-height: 1.2;
+        }
+
+        .text3 {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          opacity: 0.95;
+          letter-spacing: 0.5px;
         }
       }
 
