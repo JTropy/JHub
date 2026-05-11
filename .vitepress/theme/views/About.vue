@@ -8,9 +8,9 @@
         <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
         <span class="text3">
-          追求极致的极简主义者，在代码与文字间寻找平衡。<br/>
-          热爱开源、摄影与深度思考，试图通过技术构建一个更有趣的世界。<br/>
-          关注技术与人文的交叉领域。
+          喜欢“折腾”的实用主义者，关注技术与人文的交叉领域。<br/>
+          热爱开源、摄影与深度思考s，试图通过技术构建一个更有趣的世界。<br/>
+          
         </span>
       </div>
       <!-- 技能 -->
@@ -58,8 +58,9 @@
           --color: #7b3c25;
           background-image: url(/images/about/interest_music.png);
         "
+        @mouseenter="isMemoryActive = true"
+        @mouseleave="isMemoryActive = false"
       >
-        <div class="memory-bg"></div>
         <div class="image-content">
           <span class="tip">音乐偏好</span>
           <span class="title2">说唱、古风DJ、Funk<br/>流行乐、华语</span>
@@ -75,15 +76,15 @@
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
         <span class="title2">INTJ 建筑师</span>
-        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png'">
-          <img src="http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png" alt="MBTI" class="result-img" />
+        <div class="result-img-wrapper" @click="previewUrl = '/images/about/mbti.png'">
+          <img src="/images/about/mbti.png" alt="MBTI" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card cn-values" style="--color: #e91e63">
         <span class="tip">政治坐标</span>
         <span class="title2">社会自由主义</span>
-        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01aef80487e.png'">
-          <img src="http://img.knotens.org/i/2026/05/11/6a01aef80487e.png" alt="CN Values" class="result-img" />
+        <div class="result-img-wrapper" @click="previewUrl = '/images/about/political.png'">
+          <img src="/images/about/political.png" alt="CN Values" class="result-img" />
         </div>
       </div>
     </div>
@@ -93,18 +94,30 @@
       <div class="about-item personality-card enneagram" style="--color: #3f51b5">
         <span class="tip">九型人格</span>
         <span class="title2">5w6 观察者</span>
-        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01c00bc0f3a.png'">
-          <img src="http://img.knotens.org/i/2026/05/11/6a01c00bc0f3a.png" alt="Enneagram" class="result-img" />
+        <div class="result-img-wrapper" @click="previewUrl = '/images/about/enneagram.png'">
+          <img src="/images/about/enneagram.png" alt="Enneagram" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card attachment" style="--color: #00bcd4">
         <span class="tip">依恋类型</span>
         <span class="title2">回避型依恋</span>
-        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png'">
-          <img src="http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png" alt="Attachment" class="result-img" />
+        <div class="result-img-wrapper" @click="previewUrl = '/images/about/attachment.png'">
+          <img src="/images/about/attachment.png" alt="Attachment" class="result-img" />
         </div>
       </div>
     </div>
+
+    <!-- 记忆彩蛋全屏遮罩 -->
+    <Teleport to="body">
+      <Transition name="memory-fade">
+        <div v-if="isMemoryActive" class="full-memory-overlay">
+          <div class="memory-image-container">
+            <img src="/images/about/memory.png" alt="Memory" class="memory-img" />
+          </div>
+          <div class="memory-vignette"></div>
+        </div>
+      </Transition>
+    </Teleport>
 
     <!-- 图片预览遮罩 -->
     <Transition name="fade">
@@ -124,6 +137,7 @@ import { onMounted, ref } from "vue";
 
 const { theme } = useData();
 const previewUrl = ref("");
+const isMemoryActive = ref(false);
 
 // 技能数据
 const skillsData = [
@@ -367,36 +381,15 @@ onMounted(() => {
         }
 
         &.music-card {
-          .memory-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('http://img.knotens.org/i/2026/05/11/6a01c38525cc9.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            filter: scale(1.2) blur(10px);
-            z-index: 1;
-            transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-          }
-
+          cursor: help;
           .image-content {
-            transition: all 3s ease;
+            transition: all 0.5s ease;
           }
 
           &:hover {
-            .memory-bg {
-              opacity: 1;
-              filter: scale(1) blur(0px);
-            }
             .image-content {
-              filter: blur(8px) brightness(0.6);
-              transform: scale(0.95);
-            }
-            &::after {
-              background: rgba(0, 0, 0, 0.6);
-              box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+              filter: blur(4px) brightness(0.8);
+              transform: scale(0.98);
             }
           }
         }
@@ -471,4 +464,63 @@ onMounted(() => {
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease; }
 .fade-enter-from, .fade-leave-to { opacity: 0; }
+
+// 记忆彩蛋样式
+.full-memory-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0px);
+  pointer-events: none;
+  animation: overlayBlur 8s forwards cubic-bezier(0.4, 0, 0.2, 1);
+
+  .memory-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .memory-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      filter: blur(20px) scale(1.2);
+      animation: imageReveal 10s forwards cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .memory-vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+  }
+}
+
+@keyframes overlayBlur {
+  from { backdrop-filter: blur(0px); background-color: rgba(0, 0, 0, 0); }
+  to { backdrop-filter: blur(15px); background-color: rgba(0, 0, 0, 0.7); }
+}
+
+@keyframes imageReveal {
+  0% { opacity: 0; filter: blur(20px) scale(1.15); }
+  30% { opacity: 0.4; }
+  100% { opacity: 1; filter: blur(0px) scale(1); }
+}
+
+.memory-fade-enter-active, .memory-fade-leave-active {
+  transition: opacity 1s ease;
+}
+.memory-fade-enter-from, .memory-fade-leave-to {
+  opacity: 0;
+}
 </style>
