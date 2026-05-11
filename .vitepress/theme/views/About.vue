@@ -2,16 +2,13 @@
   <div class="about">
     <h1 class="title">关于本站</h1>
     
-    <div class="about-content" style="grid-template-columns: 1fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1fr">
       <!-- 介绍 -->
       <div class="about-item hello">
         <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
         <span class="text3">关注技术与人文的交叉领域</span>
       </div>
-    </div>
-
-    <div class="about-content" style="grid-template-columns: 1fr">
       <!-- 技能 -->
       <div class="about-item skills">
         <span class="tip">技能</span>
@@ -34,8 +31,42 @@
       </div>
     </div>
 
+    <!-- 偏好 - 第二行 -->
+    <div class="about-content" style="grid-template-columns: 1fr 1fr">
+      <div
+        class="about-item like image"
+        style="
+          --color: #0c0e20;
+          background-image: url(/images/about/interest_humanity.png);
+        "
+      >
+        <div class="image-content">
+          <span class="tip">关注偏好</span>
+          <span class="title2">人性与权力</span>
+          <div class="image-desc">
+            <span class="left">政治、历史、社会与技术的交叉地带</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="about-item like image"
+        style="
+          --color: #7b3c25;
+          background-image: url(/images/about/interest_music.png);
+        "
+      >
+        <div class="image-content">
+          <span class="tip">音乐偏好</span>
+          <span class="title2">欧美、华语流行、纯音乐、ACG</span>
+          <div class="image-desc">
+            <span class="left">旋律是思想的另一种语言</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 测评分析 - 第一行 -->
-    <div class="about-content" style="grid-template-columns: 1.5fr 1fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1.5fr">
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
         <span class="title2">INTJ 建筑师</span>
@@ -66,39 +97,6 @@
         <span class="title2">回避型依恋</span>
         <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png'">
           <img src="http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png" alt="Attachment" class="result-img" />
-        </div>
-      </div>
-    </div>
-
-    <div class="about-content" style="grid-template-columns: 1fr 1fr">
-      <div
-        class="about-item like image"
-        style="
-          --color: #0c0e20;
-          background-image: url(/images/about/interest_humanity.png);
-        "
-      >
-        <div class="image-content">
-          <span class="tip">关注偏好</span>
-          <span class="title2">人性与权力</span>
-          <div class="image-desc">
-            <span class="left">政治、历史、社会与技术的交叉地带</span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="about-item like image"
-        style="
-          --color: #7b3c25;
-          background-image: url(/images/about/interest_music.png);
-        "
-      >
-        <div class="image-content">
-          <span class="tip">音乐偏好</span>
-          <span class="title2">欧美、华语流行、纯音乐、ACG</span>
-          <div class="image-desc">
-            <span class="left">旋律是思想的另一种语言</span>
-          </div>
         </div>
       </div>
     </div>
