@@ -2,7 +2,7 @@
   <div class="about">
     <h1 class="title">关于本站</h1>
     
-    <div class="about-content" style="grid-template-columns: 1fr 1fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1.2fr">
       <!-- 介绍 -->
       <div class="about-item hello">
         <span class="text1">JTropy</span>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- 偏好 - 第二行 -->
-    <div class="about-content" style="grid-template-columns: 1fr 1fr">
+    <div class="about-content" style="grid-template-columns: 1fr 1.2fr">
       <div
         class="about-item like image"
         style="
@@ -47,23 +47,24 @@
         <div class="image-content">
           <span class="tip">座右铭</span>
           <span class="title2">怕什么真理无穷，<br/>进一寸有一寸的欢喜</span>
-          <div class="image-desc">
-            <span class="left">—— 胡适</span>
+          <div class="image-desc" style="text-align: right; width: 100%;">
+            <span class="left">—— 胡适《拟中国科学社社歌》</span>
           </div>
         </div>
       </div>
       <div
-        class="about-item like image"
+        class="about-item like image music-card"
         style="
           --color: #7b3c25;
           background-image: url(/images/about/interest_music.png);
         "
       >
+        <div class="memory-bg"></div>
         <div class="image-content">
           <span class="tip">音乐偏好</span>
-          <span class="title2">说唱、古风DJ、Funk</span>
+          <span class="title2">说唱、古风DJ、Funk<br/>流行乐、华语</span>
           <div class="image-desc">
-            <span class="left">旋律是灵魂的避风港</span>
+            <span class="left">鼠标停留有彩蛋…</span>
           </div>
         </div>
       </div>
@@ -364,6 +365,42 @@ onMounted(() => {
           z-index: 0;
           transition: all 0.5s ease;
         }
+
+        &.music-card {
+          .memory-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('http://img.knotens.org/i/2026/05/11/6a01c38525cc9.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            filter: scale(1.2) blur(10px);
+            z-index: 1;
+            transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+          }
+
+          .image-content {
+            transition: all 3s ease;
+          }
+
+          &:hover {
+            .memory-bg {
+              opacity: 1;
+              filter: scale(1) blur(0px);
+            }
+            .image-content {
+              filter: blur(8px) brightness(0.6);
+              transform: scale(0.95);
+            }
+            &::after {
+              background: rgba(0, 0, 0, 0.6);
+              box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+            }
+          }
+        }
+
         .image-content {
           position: relative;
           z-index: 2;
