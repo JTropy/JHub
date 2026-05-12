@@ -223,11 +223,7 @@ export const themeConfig = {
       coverLayout: 'both',
       // 默认封面(随机展示)
       defaultCover: [
-        "https://w.wallhaven.cc/full/po/wallhaven-po2vg3.jpg",
-        "https://w.wallhaven.cc/full/d8/wallhaven-d8gygl.png",
-        "https://w.wallhaven.cc/full/ly/wallhaven-lywpjl.jpg",
-        "https://w.wallhaven.cc/full/8g/wallhaven-8gkdy2.jpg",
-        "https://w.wallhaven.cc/full/3q/wallhaven-3qwre9.jpg",
+        "/images/cover/default-cover.png",
       ],
     }
   },
