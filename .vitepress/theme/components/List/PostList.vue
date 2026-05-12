@@ -83,18 +83,14 @@ const gridStyle = computed(() =>
 )
 
 // 判断是否显示封面
-const showCover = () => themeConfig.value?.cover?.showCover?.enable
+const showCover = (item) => themeConfig.value?.cover?.showCover?.enable && Boolean(item?.cover)
 
-// 获取封面图片 按优先级获取：cover > defaultCover > false
-const getCover = ({ cover: itemCover }) => {
+// 获取封面图片
+const getCover = (item) => {
   const { cover } = themeConfig.value ?? {}
   
   if (!cover?.showCover?.enable) return false
-  if (itemCover) return itemCover
-  
-  return Array.isArray(cover.showCover.defaultCover) 
-    ? cover.showCover.defaultCover[Math.floor(Math.random() * cover.showCover.defaultCover.length)]
-    : false
+  return item?.cover || false
 }
 
 // 前往文章

@@ -6,11 +6,19 @@
         <a :href="theme.siteMeta.author.link" class="author link" target="_blank">
           {{ theme.siteMeta.author.name }}
         </a>
-        <a class="icp link" href="https://beian.miit.gov.cn/" target="_blank">
+        <a v-if="theme.icp" class="icp link" href="https://beian.miit.gov.cn/" target="_blank">
           <i class="iconfont icon-safe" />
           {{ theme.icp }}
         </a>
-
+        <a
+          v-if="theme.moeIcp?.number"
+          class="icp moe-icp link"
+          :href="theme.moeIcp.link || `https://icp.gov.moe/?keyword=${theme.moeIcp.number}`"
+          target="_blank"
+        >
+          <i class="iconfont icon-safe" />
+          {{ theme.moeIcp.text || `萌ICP备${theme.moeIcp.number}号` }}
+        </a>
       </div>
       <a
         v-if="theme.footer?.notByAi?.enable"

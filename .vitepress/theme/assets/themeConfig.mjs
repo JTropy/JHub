@@ -22,6 +22,10 @@ export const themeConfig = {
   },
   // 备案信息
   icp: "",
+  // 萌备案信息（申请通过后填写 number）
+  moeIcp: {
+    number: "",
+  },
   // 建站日期
   since: "2026-03-19",
   // 每页文章数据
@@ -217,18 +221,10 @@ export const themeConfig = {
     twoColumns: false,
     // 是否开启封面显示
     showCover: {
-      // 是否开启封面显示 文章不设置cover封面会显示异常，可以设置下方默认封面
+      // 是否开启封面显示
       enable: true,
       // 封面布局方式: left | right | both
       coverLayout: 'both',
-      // 默认封面(随机展示)
-      defaultCover: [
-        "https://w.wallhaven.cc/full/po/wallhaven-po2vg3.jpg",
-        "https://w.wallhaven.cc/full/d8/wallhaven-d8gygl.png",
-        "https://w.wallhaven.cc/full/ly/wallhaven-lywpjl.jpg",
-        "https://w.wallhaven.cc/full/8g/wallhaven-8gkdy2.jpg",
-        "https://w.wallhaven.cc/full/3q/wallhaven-3qwre9.jpg",
-      ],
     }
   },
   // 页脚信息
