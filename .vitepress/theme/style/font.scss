@@ -1,7 +1,10 @@
 @font-face {
   font-family: "Site Title";
   font-display: swap;
-  src: url("/fonts/title.ttf");
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/site-title-qingkai.woff") format("woff");
+  unicode-range: U+4EAC, U+534E;
 }
 
 html,

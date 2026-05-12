@@ -1,6 +1,8 @@
 <template>
   <div v-if="type === 'text'" :class="['banner', bannerType]" id="main-banner">
-    <h1 class="title">你好，欢迎来到{{ theme.siteMeta.title }}</h1>
+    <h1 class="title">
+      你好，欢迎来到<span class="site-title">{{ theme.siteMeta.title }}</span>
+    </h1>
     <div class="subtitle">
       <Transition name="fade" mode="out-in">
         <span :key="hitokotoData?.hitokoto" class="text">
@@ -149,9 +151,15 @@ onBeforeUnmount(() => {
     }
   }
   .title {
-    font-family: "Site Title";
+    font-family: var(--main-font-family);
     font-weight: bold;
     font-size: 2.75rem;
+  }
+  .site-title {
+    margin-left: 0.12em;
+    font-family: "Site Title", var(--main-font-family);
+    font-size: 1.18em;
+    font-weight: 400;
   }
   .subtitle {
     width: 80%;
