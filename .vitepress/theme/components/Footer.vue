@@ -50,13 +50,11 @@
         </a>
         <a
           class="cc link"
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
+          href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans"
           target="_blank"
         >
           <i class="iconfont icon-line" />
           <i class="iconfont icon-by-line" />
-          <i class="iconfont icon-nc-line" />
-          <i class="iconfont icon-nd-line" />
         </a>
       </div>
     </div>

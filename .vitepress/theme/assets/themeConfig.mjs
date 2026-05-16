@@ -17,7 +17,7 @@ export const themeConfig = {
       name: "京华",
       cover: "/images/logo/logo.svg",
       email: "X@knotens.org",
-      link: "https://github.com/jtropy",
+      link: "https://github.com/JTropy",
     },
   },
   // 备案信息
@@ -237,7 +237,7 @@ export const themeConfig = {
       },
       {
         icon: "github",
-        link: "https://github.com/PawnPony",
+        link: "https://github.com/JTropy",
       },
       {
         icon: "bilibili",
