@@ -23,14 +23,14 @@
         <span class="tip">许可协议</span>
         <a
           class="name"
-          href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans"
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
           target="_blank"
         >
-          CC BY-SA 4.0
+          CC BY-NC-SA 4.0
         </a>
       </div>
     </div>
-    <span class="meta-tip">署名-相同方式共享 4.0 国际</span>
+    <span class="meta-tip">署名-非商业性使用-相同方式共享 4.0 国际</span>
   </div>
 </template>
 
