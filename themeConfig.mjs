@@ -9,14 +9,14 @@ export const themeConfig = {
     // 站点logo
     logo: "/images/logo/logo.svg",
     // 站点地址
-    site: "https://knotens.org",
+    site: "https://blog.f0.nz",
     // 语言
     lang: "zh-CN",
     // 作者
     author: {
       name: "京华",
       cover: "/images/logo/logo.svg",
-      email: "X@knotens.org",
+      email: "X@f0.nz",
       link: "https://github.com/JTropy",
     },
   },
@@ -44,7 +44,7 @@ export const themeConfig = {
           rel: "alternate",
           type: "application/rss+xml",
           title: "RSS",
-          href: "https://knotens.org/rss.xml",
+          href: "https://blog.f0.nz/rss.xml",
         },
       ],
       // 预载 CDN
@@ -155,7 +155,7 @@ export const themeConfig = {
         {
           icon: "/images/logo/logo.webp",
           name: "博客镜像站",
-          url: "https://knotens.org/",
+          url: "https://blog.f0.nz/",
         },
       ],
     },
@@ -240,7 +240,7 @@ export const themeConfig = {
     social: [
       {
         icon: "email",
-        link: "X@knotens.org",
+        link: "X@f0.nz",
       },
       {
         icon: "github",
