@@ -431,6 +431,47 @@
         color: var(--main-info-color);
       }
     }
+    &.info {
+      // 中性色：浅灰底 + 主题灰边
+      background-color: var(--main-card-background);
+      border-left-color: var(--main-color-gray);
+      p.custom-block-title {
+        color: var(--main-font-second-color);
+      }
+    }
+    &.success {
+      background-color: var(--main-success-color-gray);
+      border-left-color: var(--main-success-color);
+      p {
+        color: var(--main-success-color);
+      }
+    }
+    &.example {
+      // 紫色调，区别于 tip 的蓝
+      background-color: #a06cd520;
+      border-left-color: #a06cd5;
+      p.custom-block-title {
+        color: #a06cd5;
+      }
+    }
+    &.question {
+      // 青色调
+      background-color: #06b6d420;
+      border-left-color: #06b6d4;
+      p.custom-block-title {
+        color: #06b6d4;
+      }
+    }
+    &.quote {
+      // 灰底 + 斜体，强调"引用/转述"
+      background-color: var(--main-card-second-background);
+      border-left-color: var(--main-color-gray);
+      font-style: italic;
+      p.custom-block-title {
+        color: var(--main-font-second-color);
+        font-style: normal;
+      }
+    }
     &.warning {
       background-color: var(--main-warning-color-gray);
       border-left-color: var(--main-warning-color);

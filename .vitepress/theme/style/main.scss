@@ -268,7 +268,11 @@ a {
   &.warning,
   &.danger,
   &.tip,
-  &.summary {
+  &.summary,
+  &.success,
+  &.example,
+  &.question,
+  &.quote {
     .custom-block-content {
 
       p,

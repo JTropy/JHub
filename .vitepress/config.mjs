@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { createRssFile } from "./theme/utils/generateRSS.mjs";
 import { withPwa } from "@vite-pwa/vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
 import {
   getAllPosts,
   getAllType,
@@ -25,7 +26,7 @@ const postData = await getAllPosts();
 const themeConfig = await getThemeConfig();
 
 // https://vitepress.dev/reference/site-config
-export default withPwa(
+export default withMermaid(withPwa(
   defineConfig({
     title: themeConfig.siteMeta.title,
     description: themeConfig.siteMeta.description,
@@ -64,7 +65,7 @@ export default withPwa(
       config: (md) => markdownConfig(md, themeConfig),
     },
     // 构建排除
-    srcExclude: ["**/README.md", "**/TODO.md"],
+    srcExclude: ["**/README.md", "**/TODO.md", "**/AGENTS.md", "**/CLAUDE.md"],
     // transformHead
     transformPageData: async (pageData) => {
       // canonical URL
@@ -201,4 +202,4 @@ export default withPwa(
       },
     },
   }),
-);
+));

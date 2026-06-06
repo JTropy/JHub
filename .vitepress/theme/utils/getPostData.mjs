@@ -61,15 +61,22 @@ export const getAllPosts = async () => {
           // 解析 front matter
           const { data } = matter(content);
           const { title, date, categories, description, tags, top, cover } = data;
+          // 发布时间：frontmatter date 缺失/非法时回退到文件创建时间；若构建环境拿不到
+          // 创建时间（Linux/CI 的 birthtimeMs 常为 0）再退到修改时间。绝不让它落到纪元 0。
+          // date 字段与 expired（发表于 X 天前）必须用同一口径，否则空 date 会算成两万多天前。
+          const parsedDate = date ? new Date(date).getTime() : NaN;
+          const publishedMs = Number.isFinite(parsedDate)
+            ? parsedDate
+            : birthtimeMs && birthtimeMs > 0
+              ? birthtimeMs
+              : mtimeMs;
           // 计算文章的过期天数
-          const expired = Math.floor(
-            (new Date().getTime() - new Date(date).getTime()) / (1000 * 60 * 60 * 24),
-          );
+          const expired = Math.floor((Date.now() - publishedMs) / (1000 * 60 * 60 * 24));
           // 返回文章对象
           return {
             id: generateId(item),
             title: title || "未命名文章",
-            date: date ? new Date(date).getTime() : birthtimeMs,
+            date: publishedMs,
             lastModified: mtimeMs,
             expired,
             tags,
